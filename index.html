@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spector Capital Corporation — We buy and sell distressed homes fast across Dallas, Rockwall, and Kaufman counties. No repairs, no commissions, close in 7 days.">
+<meta name="keywords" content="sell my house fast Dallas, cash home buyer DFW, foreclosure help Dallas, motivated seller Dallas TX, wholesale real estate DFW">
+<meta property="og:title" content="Spector Capital Corporation — DFW Real Estate">
+<meta property="og:description" content="We buy distressed homes fast across Dallas, Rockwall, and Kaufman counties. Cash offers in 24 hours. Close in 7 days.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<title>Spector Capital Corporation — DFW Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1E6FD9;
+    --blue-light: #5B9FEF;
+    --blue-dark: #0D4A9E;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --white: #F5F2EC;
+    --white2: #E8E4DA;
+    --gray: #888880;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(30,111,217,0.15); transition: padding 0.3s; }
+  .nav-logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--white); text-decoration: none; }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 24px; border: 1px solid var(--blue); color: var(--blue); text-decoration: none; transition: all 0.2s; }
+  .nav-cta:hover { background: var(--blue); color: var(--white); }
+
+  /* ── HERO ── */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(30,111,217,0.07) 0%, transparent 70%), linear-gradient(180deg, #0A0A0A 0%, #111111 100%); }
+  .hero-lines { position: absolute; inset: 0; background-image: linear-gradient(rgba(30,111,217,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(30,111,217,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+  .hero-content { position: relative; z-index: 2; max-width: 900px; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--blue); }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(52px, 8vw, 96px); font-weight: 300; line-height: 1.0; color: var(--white); margin-bottom: 1rem; animation: fadeUp 0.8s ease 0.2s both; }
+  .hero h1 em { font-style: italic; color: var(--blue); }
+  .hero-sub { font-size: 16px; color: var(--gray); max-width: 520px; line-height: 1.8; margin-bottom: 3rem; animation: fadeUp 0.8s ease 0.35s both; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.5s both; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 40px; background: var(--blue); color: var(--white); font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid var(--blue); }
+  .btn-primary:hover { background: var(--blue-light); border-color: var(--blue-light); transform: translateY(-2px); }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 40px; border: 1px solid rgba(30,111,217,0.4); color: var(--white); font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+  .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+  .hero-stats { position: absolute; bottom: 4rem; right: 4rem; display: flex; gap: 3rem; z-index: 2; animation: fadeUp 0.8s ease 0.6s both; }
+  .hero-stat { text-align: right; }
+  .hero-stat-num { font-family: var(--font-display); font-size: 42px; font-weight: 300; color: var(--blue); line-height: 1; }
+  .hero-stat-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-top: 4px; }
+
+  /* ── TRUST BAR ── */
+  .trust-bar { background: var(--dark2); border-top: 1px solid rgba(30,111,217,0.1); border-bottom: 1px solid rgba(30,111,217,0.1); padding: 1.2rem 4rem; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+  .trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+
+  /* ── SECTIONS ── */
+  section { padding: 7rem 4rem; }
+  .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; }
+  .section-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--blue); }
+  .section-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 58px); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 1.5rem; }
+  .section-title em { font-style: italic; color: var(--blue); }
+  .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--blue), transparent); opacity: 0.3; }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--dark); }
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .how-steps { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
+  .how-step { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem; border: 1px solid rgba(30,111,217,0.1); transition: border-color 0.2s; }
+  .how-step:hover { border-color: rgba(30,111,217,0.35); }
+  .step-num { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: rgba(30,111,217,0.3); line-height: 1; flex-shrink: 0; width: 50px; }
+  .step-content h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
+  .step-content p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+  /* ── SELLERS ── */
+  .sellers { background: var(--black); }
+  .sellers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 3rem; border: 1px solid rgba(30,111,217,0.1); }
+  .seller-card { padding: 2.5rem; background: var(--dark); transition: background 0.2s; }
+  .seller-card:hover { background: var(--dark2); }
+  .seller-icon { font-size: 28px; margin-bottom: 1rem; }
+  .seller-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
+  .seller-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+  /* ── BUYERS ── */
+  .buyers { background: var(--dark); }
+  .buyers-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .buyers-features { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+  .buyer-feature { display: flex; gap: 1rem; align-items: flex-start; }
+  .buyer-feature-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 8px; }
+  .buyer-feature p { font-size: 15px; color: var(--white2); line-height: 1.6; }
+  .buyer-feature p span { color: var(--blue); font-weight: 500; }
+  .buyers-cta-box { background: var(--dark2); border: 1px solid rgba(30,111,217,0.2); padding: 3rem; }
+  .buyers-cta-box h3 { font-family: var(--font-display); font-size: 32px; font-weight: 300; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+  .buyers-cta-box > p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 2rem; }
+
+  /* ── COUNTIES ── */
+  .counties { background: var(--black); }
+  .counties-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .county-card { padding: 2.5rem; border: 1px solid rgba(30,111,217,0.15); position: relative; overflow: hidden; transition: border-color 0.2s; }
+  .county-card:hover { border-color: rgba(30,111,217,0.4); }
+  .county-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue), transparent); }
+  .county-name { font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--white); margin-bottom: 6px; }
+  .county-state { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.5rem; }
+  .county-cities { font-size: 13px; color: var(--gray); line-height: 1.8; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--dark); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+  .contact-item { display: flex; flex-direction: column; gap: 4px; }
+  .contact-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); }
+  .contact-value { font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--white); text-decoration: none; transition: color 0.2s; }
+  .contact-value:hover { color: var(--blue); }
+
+  /* SMS + CALL BUTTONS */
+  .contact-action-buttons { display: flex; gap: 12px; margin-top: 6px; flex-wrap: wrap; }
+  .contact-action-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; }
+  .contact-action-btn svg { flex-shrink: 0; }
+  .btn-sms { background: var(--blue); color: var(--white); border: 1px solid var(--blue); }
+  .btn-sms:hover { background: var(--blue-light); border-color: var(--blue-light); transform: translateY(-2px); }
+  .btn-call { background: transparent; color: var(--blue); border: 1px solid var(--blue); }
+  .btn-call:hover { background: var(--blue); color: var(--white); transform: translateY(-2px); }
+  .response-note { font-size: 12px; color: var(--gray); margin-top: 6px; letter-spacing: 0.05em; }
+
+  /* FORMS */
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .form-group input, .form-group select, .form-group textarea { background: var(--dark2); border: 1px solid rgba(30,111,217,0.2); color: var(--white); padding: 12px 16px; font-family: var(--font-body); font-size: 14px; font-weight: 300; outline: none; transition: border-color 0.2s; width: 100%; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(136,136,128,0.6); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
+  .form-group select option { background: var(--dark2); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit { padding: 16px; background: var(--blue); color: var(--white); font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.2s; width: 100%; margin-top: 0.5rem; }
+  .form-submit:hover { background: var(--blue-light); transform: translateY(-1px); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .success-msg { display: none; margin-top: 1rem; font-size: 13px; color: var(--blue); text-align: center; padding: 12px; border: 1px solid rgba(30,111,217,0.3); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--black); padding: 3rem 4rem; border-top: 1px solid rgba(30,111,217,0.1); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .footer-logo { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--white); }
+  .footer-logo span { color: var(--blue); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 12px; color: var(--gray); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--blue); }
+  .footer-bottom { border-top: 1px solid rgba(30,111,217,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-copy { font-size: 12px; color: var(--gray); }
+  .footer-disclaimer { font-size: 11px; color: rgba(136,136,128,0.5); max-width: 500px; line-height: 1.6; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-stats { position: static; flex-direction: row; margin-top: 3rem; justify-content: flex-start; }
+    .hero-stat { text-align: left; }
+    section { padding: 4rem 1.5rem; }
+    .trust-bar { padding: 1rem 1.5rem; gap: 1.5rem; }
+    .how-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .sellers-grid { grid-template-columns: 1fr; }
+    .buyers-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .counties-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Spector <span>Capital</span></a>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#sellers">Sellers</a></li>
+    <li><a href="#buyers">Buyers</a></li>
+    <li><a href="#counties">Counties</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get an Offer</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">DFW Real Estate Solutions</div>
+    <h1>We Buy &amp; Sell<br><em>DFW Homes</em><br>Fast.</h1>
+    <p class="hero-sub">Spector Capital Corporation connects distressed homeowners with serious cash buyers across Dallas, Rockwall, and Kaufman counties. No repairs. No commissions. No hassle.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Get a Cash Offer
+      </a>
+      <a href="sms:4694108866" class="btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Text Us Now
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Counties Covered</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">7</div><div class="hero-stat-label">Day Close</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">0</div><div class="hero-stat-label">Commissions</div></div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div>No Repairs Required</div>
+  <div class="trust-item"><div class="trust-dot"></div>Cash Offers in 24 Hours</div>
+  <div class="trust-item"><div class="trust-dot"></div>Close in 7 Days</div>
+  <div class="trust-item"><div class="trust-dot"></div>Zero Commissions</div>
+  <div class="trust-item"><div class="trust-dot"></div>As-Is Purchases</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-grid">
+    <div class="reveal">
+      <div class="section-eyebrow">The Process</div>
+      <h2 class="section-title">Simple.<br><em>Straightforward.</em><br>Fast.</h2>
+      <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-top:1rem;">Whether you are a homeowner facing a difficult situation or a cash investor looking for your next deal — Spector Capital Corporation makes it simple.</p>
+      <div style="margin-top:2rem;">
+        <a href="sms:4694108866" class="btn-primary" style="display:inline-flex;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Text Us to Get Started
+        </a>
+      </div>
+    </div>
+    <div class="how-steps reveal">
+      <div class="how-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Tell Us About Your Property</h3>
+          <p>Fill out our quick form or text us directly at (469) 410-8866. We gather basic details about your home and situation — no obligation whatsoever.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Receive a Fair Cash Offer</h3>
+          <p>We analyze your property and present a fair all-cash offer within 24 hours. No lowball numbers — just honest, straightforward pricing.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Close On Your Timeline</h3>
+          <p>We can close in as little as 7 days or work around your schedule. You choose the date that works best for you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SELLERS -->
+<section class="sellers" id="sellers">
+  <div class="reveal">
+    <div class="section-eyebrow">For Homeowners</div>
+    <h2 class="section-title">We Buy Homes In<br><em>Any Situation</em></h2>
+  </div>
+  <div class="sellers-grid reveal">
+    <div class="seller-card"><div class="seller-icon">🏦</div><h3>Facing Foreclosure</h3><p>Don't let the bank take your home. We can move quickly to stop the foreclosure process and put cash in your hands before it's too late.</p></div>
+    <div class="seller-card"><div class="seller-icon">⚡</div><h3>Must Sell Fast</h3><p>Job relocation, divorce, inherited property, or financial hardship — whatever your reason, we buy fast with zero complications.</p></div>
+    <div class="seller-card"><div class="seller-icon">🏚️</div><h3>Vacant or Damaged</h3><p>We buy homes as-is in any condition. No repairs, no cleaning, no staging required. Leave behind what you don't want.</p></div>
+    <div class="seller-card"><div class="seller-icon">📋</div><h3>Estate &amp; Probate</h3><p>Handling an inherited property can be overwhelming. We simplify the process and make it easy to sell quickly and fairly.</p></div>
+    <div class="seller-card"><div class="seller-icon">💔</div><h3>Divorce Sale</h3><p>We handle divorce property sales with discretion and speed so both parties can move forward without the stress of a traditional listing.</p></div>
+    <div class="seller-card"><div class="seller-icon">💰</div><h3>Pre-Foreclosure</h3><p>Received a notice of default? We specialize in pre-foreclosure purchases and can help protect your credit and dignity.</p></div>
+  </div>
+  <div style="text-align:center;margin-top:3rem;" class="reveal">
+    <a href="#contact" class="btn-primary" style="display:inline-flex;">Get My Cash Offer Today</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BUYERS -->
+<section class="buyers" id="buyers">
+  <div class="buyers-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">For Investors</div>
+      <h2 class="section-title">Join Our<br><em>Private</em><br>Buyers List</h2>
+      <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-top:1rem;margin-bottom:2rem;">We source off-market distressed properties across Dallas, Rockwall, and Kaufman counties daily. Get first access to deals before they ever hit the MLS.</p>
+      <div class="buyers-features">
+        <div class="buyer-feature"><div class="buyer-feature-dot"></div><p><span>Off-market deals</span> — foreclosures, REO, motivated sellers, and vacant properties</p></div>
+        <div class="buyer-feature"><div class="buyer-feature-dot"></div><p><span>First access</span> — our VIP buyers get deals sent directly before the general market</p></div>
+        <div class="buyer-feature"><div class="buyer-feature-dot"></div><p><span>Below market pricing</span> — properties priced for fast cash transactions</p></div>
+        <div class="buyer-feature"><div class="buyer-feature-dot"></div><p><span>Dallas, Rockwall &amp; Kaufman</span> counties — one of the fastest growing markets in Texas</p></div>
+        <div class="buyer-feature"><div class="buyer-feature-dot"></div><p><span>Fix &amp; flip, buy &amp; hold, wholesale</span> — deals that fit every investment strategy</p></div>
+      </div>
+    </div>
+    <div class="buyers-cta-box reveal">
+      <h3>Get Deals Sent<br>Straight to You</h3>
+      <p>Join our private buyers list and receive off-market distressed properties in the DFW area the moment we have them under contract. Free to join, no obligation.</p>
+      <form id="buyer-form" onsubmit="submitBuyerForm(event)">
+        <div class="form-group" style="margin-bottom:1rem;"><label>Full Name *</label><input type="text" id="b-name" placeholder="Your full name" required /></div>
+        <div class="form-group" style="margin-bottom:1rem;"><label>Phone Number *</label><input type="tel" id="b-phone" placeholder="(469) 000-0000" required /></div>
+        <div class="form-group" style="margin-bottom:1rem;"><label>Email Address *</label><input type="email" id="b-email" placeholder="you@email.com" required /></div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>Investor Type *</label>
+          <select id="b-type" required>
+            <option value="">Select your strategy</option>
+            <option>Fix &amp; Flip</option>
+            <option>Buy &amp; Hold / Rental</option>
+            <option>Wholesale</option>
+            <option>New Construction</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:1.5rem;">
+          <label>Price Range</label>
+          <select id="b-price">
+            <option>Under $150,000</option>
+            <option>$150,000 – $300,000</option>
+            <option>$300,000 – $500,000</option>
+            <option>$500,000+</option>
+          </select>
+        </div>
+        <button type="submit" id="b-btn" class="form-submit">Join Buyers List &rarr;</button>
+        <div id="buyer-success" class="success-msg">&#10003; You're on the list! We'll be in touch with deals soon.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COUNTIES -->
+<section class="counties" id="counties">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 3rem;">
+    <div class="section-eyebrow" style="justify-content:center;">Our Coverage</div>
+    <h2 class="section-title">Three Counties.<br><em>One Team.</em></h2>
+    <p style="font-size:15px;color:var(--gray);line-height:1.8;">We specialize exclusively in the DFW eastern corridor — one of the fastest growing real estate markets in the entire country.</p>
+  </div>
+  <div class="counties-grid reveal">
+    <div class="county-card">
+      <div class="county-name">Dallas</div>
+      <div class="county-state">County, Texas</div>
+      <div class="county-cities">Mesquite · Garland · Rowlett · Balch Springs · Seagoville · Sunnyvale · Hutchins · Wilmer · Combine</div>
+    </div>
+    <div class="county-card">
+      <div class="county-name">Rockwall</div>
+      <div class="county-state">County, Texas</div>
+      <div class="county-cities">Rockwall · Rowlett · Heath · Fate · McLendon-Chisholm · Mobile City · Royse City</div>
+    </div>
+    <div class="county-card">
+      <div class="county-name">Kaufman</div>
+      <div class="county-state">County, Texas</div>
+      <div class="county-cities">Forney · Terrell · Kaufman · Crandall · Seagoville · Combine · Elmo · Scurry · Talty</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Reach Us</div>
+      <h2 class="section-title">Let's Talk<br><em>About Your</em><br>Property</h2>
+      <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-top:1rem;margin-bottom:2rem;">Whether you need to sell fast or you're looking for your next investment deal — we are ready to move. Reach out anytime.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-label">Phone Number</span>
+          <span class="contact-value" style="cursor:default;">(469) 410-8866</span>
+        </div>
+        <div class="contact-action-buttons">
+          <a href="sms:4694108866" class="contact-action-btn btn-sms">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Text Us
+          </a>
+          <a href="tel:4694108866" class="contact-action-btn btn-call">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Call Us
+          </a>
+        </div>
+        <p class="response-note">We respond within 1 hour — 7 days a week</p>
+        <div class="contact-item">
+          <span class="contact-label">Email Us</span>
+          <a href="mailto:spector.capital.corporation@gmail.com" class="contact-value" style="font-size:16px;">spector.capital.corporation@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Service Area</span>
+          <span class="contact-value" style="cursor:default;font-size:18px;">Dallas · Rockwall · Kaufman</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <form id="contact-form" class="contact-form" onsubmit="submitContactForm(event)">
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" id="c-fname" placeholder="John" required /></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" id="c-lname" placeholder="Smith" required /></div>
+        </div>
+        <div class="form-group"><label>Phone Number *</label><input type="tel" id="c-phone" placeholder="(469) 000-0000" required /></div>
+        <div class="form-group"><label>Email Address *</label><input type="email" id="c-email" placeholder="you@email.com" required /></div>
+        <div class="form-group"><label>Property Address</label><input type="text" id="c-address" placeholder="123 Main St, Dallas, TX 75001" /></div>
+        <div class="form-group">
+          <label>I Am A *</label>
+          <select id="c-type" required>
+            <option value="">Select one</option>
+            <option>Homeowner looking to sell</option>
+            <option>Cash buyer / Investor</option>
+            <option>Agent with a referral</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea id="c-message" placeholder="Tell us about your property or investment goals..."></textarea></div>
+        <button type="submit" id="c-btn" class="form-submit">Send Message &rarr;</button>
+        <div id="contact-success" class="success-msg">&#10003; Message received! We will be in touch within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Spector <span>Capital</span> Corporation</div>
+    <ul class="footer-links">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#sellers">Sellers</a></li>
+      <li><a href="#buyers">Buyers</a></li>
+      <li><a href="#counties">Counties</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="sms:4694108866">💬 Text Us</a></li>
+      <li><a href="tel:4694108866">📞 (469) 410-8866</a></li>
+      <li><a href="mailto:spector.capital.corporation@gmail.com">✉️ Email</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Spector Capital Corporation. All rights reserved. Dallas-Fort Worth, Texas.</div>
+    <div class="footer-disclaimer">Spector Capital Corporation is a real estate investment company. We are not a licensed real estate brokerage. All transactions are handled by licensed title companies and real estate attorneys.</div>
+  </div>
+</footer>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("OGXHYBpV1TIMV3G5A");
+  const SERVICE_ID  = "service_e6q9rmm";
+  const TEMPLATE_ID = "template_6a4fsna";
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav shrink on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.padding = window.scrollY > 80 ? '1rem 4rem' : '1.5rem 4rem';
+  });
+
+  // Contact form submit
+  function submitContactForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('c-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+      to_email:   "spector.capital.corporation@gmail.com",
+      from_name:  document.getElementById('c-fname').value + ' ' + document.getElementById('c-lname').value,
+      from_phone: document.getElementById('c-phone').value,
+      from_email: document.getElementById('c-email').value,
+      property:   document.getElementById('c-address').value || 'Not provided',
+      user_type:  document.getElementById('c-type').value,
+      message:    document.getElementById('c-message').value || 'No message provided',
+      form_type:  'Contact / Property Inquiry',
+      subject:    'New Property Inquiry — Spector Capital Corporation Website',
+    })
+    .then(() => {
+      document.getElementById('contact-success').style.display = 'block';
+      document.getElementById('contact-form').reset();
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+    })
+    .catch(() => {
+      alert('Something went wrong. Please text or call us directly at (469) 410-8866.');
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+    });
+  }
+
+  // Buyer form submit
+  function submitBuyerForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('b-btn');
+    btn.textContent = 'Joining...';
+    btn.disabled = true;
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+      to_email:    "spector.capital.corporation@gmail.com",
+      from_name:   document.getElementById('b-name').value,
+      from_phone:  document.getElementById('b-phone').value,
+      from_email:  document.getElementById('b-email').value,
+      user_type:   document.getElementById('b-type').value,
+      price_range: document.getElementById('b-price').value,
+      property:    'N/A — Buyer List Signup',
+      message:     'New investor signed up for the VIP buyers list.',
+      form_type:   'Buyers List Signup',
+      subject:     'New Buyer Signup — Spector Capital Corporation Website',
+    })
+    .then(() => {
+      document.getElementById('buyer-success').style.display = 'block';
+      document.getElementById('buyer-form').reset();
+      btn.textContent = 'Join Buyers List →';
+      btn.disabled = false;
+    })
+    .catch(() => {
+      alert('Something went wrong. Please text or call us directly at (469) 410-8866.');
+      btn.textContent = 'Join Buyers List →';
+      btn.disabled = false;
+    });
+  }
+</script>
+</body>
+</html>
